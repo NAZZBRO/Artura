@@ -8,7 +8,7 @@ buyButtons.forEach(button => {
     button.addEventListener('click', () => {
         const userChoice = confirm('Do you want to continue in Instagram?');
         if (userChoice) {
-            window.location.href = "https://www.instagram.com/_keyes_fashions/?__pwa=1#";
+            window.location.href = "https://www.instagram.com/_keyes_fashions?igsh=MXVxaTM4b3RoM2FrbA==";
         }
     });
 });
