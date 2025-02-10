@@ -1,49 +1,22 @@
 
+document.querySelectorAll(".buy-button").forEach(button => {
+  button.addEventListener("click", function() {
+      let productName = this.getAttribute("data-product"); // Get product name
+      let price = this.getAttribute("data-price"); // Get product price
+      const wlink=('https://nazzbro.github.io/Artura/polaroid.jpg');//get link
+      //let w_link=this.getAttribute("product-link");   
+      let phone = "919633879383"; // WhatsApp number (with country code)
+//8281071602    test num
+      // Create a pre-filled WhatsApp message
+      let message = encodeURIComponent(`Hello, I want to buy the ${productName} for ₹${price}. Is it available?`);
+      
+      let whatsappURL = `https://wa.me/${phone}?text=${message}%0A${wlink}`;
 
-// Collect all buttons with a common class name or ID pattern
-const buyButtons = document.querySelectorAll('.buy-button'); // Select all elements with class 'buy-button'
-
-// Add event listener to each button
-buyButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const userChoice = confirm('Do you want to continue in Instagram?');
-        if (userChoice) {
-            window.location.href = "https://www.instagram.com/_keyes_fashions?igsh=MXVxaTM4b3RoM2FrbA==";
-        }
-    });
+      // Open WhatsApp chat in a new tab
+      //window.location.href = waLink;
+      window.open(whatsappURL, "_blank");
+  });
 });
-
-
-
-const images = document.querySelectorAll('.product-image');
-  const modal = document.getElementById("myModal");
-  const modalImg = document.getElementById("img01");
-  const close = document.getElementsByClassName("close")[0];
-
-  // Loop through all images and add click event listener for preview
-  images.forEach((image) => {
-    image.addEventListener('click', function() {
-      modal.style.display = "block"; // Show the modal
-      modalImg.src = this.src; // Set modal image to clicked image source
-      modalImg.alt = this.alt;
-    });
-  });
-
-  // Close the modal when clicked on 'X'
-  close.addEventListener('click', () => {
-    modal.style.display = "none"; // Hide modal
-  });
-
-  // Close modal if clicked anywhere outside of the modal content
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = "none"; // Close the modal
-    }
-  });
-
-
-
-
 
 
 
